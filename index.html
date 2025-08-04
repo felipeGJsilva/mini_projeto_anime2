@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anime.js Playground</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1><i class="fas fa-play-circle"></i> Anime.js Playground</h1>
+    </header>
+
+    <div class="main-content">
+      <nav class="controls-panel">
+        <div class="controls-group">
+          <h3>Propriedades da Animação</h3>
+          
+          <div class="control-row">
+            <label>Tipo:</label>
+            <select id="animType" class="form-control">
+              <option value="translateX">Mover X</option>
+              <option value="translateY">Mover Y</option>
+              <option value="scale">Escala</option>
+              <option value="rotate">Rotação</option>
+              <option value="opacity">Opacidade</option>
+              <option value="backgroundColor">Cor</option>
+            </select>
+          </div>
+
+          <div class="control-row">
+            <div>
+              <label>De:</label>
+              <input type="text" id="startValue" class="form-control" value="0">
+            </div>
+            <div>
+              <label>Para:</label>
+              <input type="text" id="endValue" class="form-control" value="100">
+            </div>
+          </div>
+
+          <div class="control-row">
+            <div>
+              <label>Duração (ms):</label>
+              <input type="number" id="duration" class="form-control" value="1000">
+            </div>
+            <div>
+              <label>Delay (ms):</label>
+              <input type="number" id="delay" class="form-control" value="0">
+            </div>
+          </div>
+
+          <div class="control-row">
+            <label>Easing:</label>
+            <select id="easing" class="form-control">
+              <option value="linear">linear</option>
+              <option value="easeInQuad">easeInQuad</option>
+              <option value="easeOutQuad">easeOutQuad</option>
+              <option value="easeInOutQuad" selected>easeInOutQuad</option>
+              <option value="easeInCubic">easeInCubic</option>
+              <option value="easeOutCubic">easeOutCubic</option>
+              <option value="easeInOutCubic">easeInOutCubic</option>
+              <option value="easeOutElastic">easeOutElastic</option>
+              <option value="easeOutBounce">easeOutBounce</option>
+            </select>
+          </div>
+
+          <div class="control-row checkboxes">
+            <div>
+              <input type="checkbox" id="loop">
+              <label for="loop">Repetir</label>
+            </div>
+            <div>
+              <input type="checkbox" id="alternate">
+              <label for="alternate">Alternar</label>
+            </div>
+          </div>
+
+          <div class="control-row buttons">
+            <button id="btnAnimate" class="btn-primary">
+              <i class="fas fa-play"></i> Animar
+            </button>
+            <button id="btnReset" class="btn-secondary">
+              <i class="fas fa-undo"></i> Resetar
+            </button>
+          </div>
+        </div>
+
+        <div class="controls-group">
+          <h3>Presets</h3>
+          <div id="presetList" class="preset-list">
+            <!-- Presets serão carregados aqui -->
+          </div>
+        </div>
+      </nav>
+
+      <div class="preview-area">
+        <div class="preview-container">
+          <div id="previewElement" class="preview-element">Elemento</div>
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <h3><i class="fas fa-code"></i> Código Anime.js</h3>
+            <button id="btnCopyCode" class="btn-secondary">
+              <i class="fas fa-copy"></i> Copiar
+            </button>
+          </div>
+          <pre><code id="codeOutput">// Seu código será gerado aqui</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
